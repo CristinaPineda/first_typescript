@@ -1,28 +1,23 @@
-// interface IUsuario {
-//     id: string;
-//     email: string;
-// }
-
-// interface IAdmin extends IUsuario {
-//     cargo: 'gerente' | 'coordenador' | 'supervisor';
-// }
-
-// function redirecione(usuario: IUsuario | IAdmin) {
-//     if ('cargo' in usuario) {
-//         // redirecione para a area de administração
-//     }
-//         // redirecione para a area de usuario
-// }
-
-interface IUsuario {
-    id: string;
-    email: string;
-    cargo?: 'gerente' | 'coordenador' | 'supervisor' | 'funcionario';
+interface Cachorro {
+    readonly nome: string;
+    readonly idade: number;
+    readonly parqueFavorito?: string; 
 }
 
-function redirecione(usuario: IUsuario) {
-    if (usuario.cargo) {
-        // redirecione para a area de administração
+type SomenteLeitura = {
+    +readonly [K in keyof Cachorro]-?: Cachorro[K]
+}
+
+class MeuCachorro implements SomenteLeitura {
+    idade;
+    nome;
+    parqueFavorito;
+
+
+    constructor(nome, idade) {
+        this.nome = nome;
+        this.idade = idade;
     }
-        // redirecione para a area de usuario
 }
+
+const cao = new MeuCachorro('Apolo', 14);
