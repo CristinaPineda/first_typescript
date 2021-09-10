@@ -1,4 +1,4 @@
-![icone do typescript]('./typescript.png')
+![icone do typescript](./typescript.png)
 # TypeScript
 
 * Primeiros passos com TypeScript
@@ -8,4 +8,5 @@
 * Uso do *Parsel-bundler*
 
 instalar typeScript : `npm install -g typescript`
+
 instalar parsel-bundler: `npm install -g parcel-bundler`
