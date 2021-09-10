@@ -5,6 +5,8 @@ function some(a: number, b: number) {
 console.log(some(1,4))
 console.log(some(1, '2'))
 
+// ------------------------------------------------------------------
+
 // types
 
 
@@ -12,6 +14,7 @@ console.log(some(1, '2'))
 interface Animal {
     nome: string;
     tipo: 'terrestre' | 'aquatico';
+    som(decibeis: number): void;
 }
 
 interface Felinos extends Animal {
@@ -20,11 +23,19 @@ interface Felinos extends Animal {
 
 const animal: Animal = {
     nome: 'Elefante',
-    tipo: 'terrestre'
+    tipo: 'terrestre',
+    som: (decibeis) => (`${decibeis}db`)
 }
+
+animal.som('1');
+animal.som(3);
 
 const gatenhos: Felinos = {
     nome: 'gato',
     tipo: 'terrestre',
     visaoNoturna: true,
+    som: (decibeis) => (`${decibeis}db`)
 }
+
+gatenhos.som('1');
+gatenhos.som(3);
